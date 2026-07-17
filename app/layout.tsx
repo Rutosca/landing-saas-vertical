@@ -56,7 +56,7 @@ export default function RootLayout({
   return (
     <html
       lang="es"
-      className={`bg-background ${geistSans.variable} ${geistMono.variable} ${bricolage.variable}`}
+      className={`scroll-smooth bg-background ${geistSans.variable} ${geistMono.variable} ${bricolage.variable}`}
     >
       <body className="font-sans antialiased">
         {children}

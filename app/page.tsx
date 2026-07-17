@@ -1,6 +1,7 @@
 import { SiteHeader } from "@/components/site-header"
 import { Hero } from "@/components/hero"
 import { Problem } from "@/components/problem"
+import { HowItWorks } from "@/components/how-it-works"
 
 export default function Page() {
   return (
@@ -8,6 +9,7 @@ export default function Page() {
       <SiteHeader />
       <Hero />
       <Problem />
+      <HowItWorks />
     </main>
   )
 }

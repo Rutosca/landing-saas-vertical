@@ -96,6 +96,7 @@ export function Hero() {
               size="lg"
               variant="outline"
               className="h-12 rounded-full border-border bg-card px-7 text-base font-semibold text-foreground hover:bg-secondary"
+              render={<a href="#como-funciona" />}
             >
               Ver cómo funciona
             </Button>

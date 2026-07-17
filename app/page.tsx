@@ -3,6 +3,7 @@ import { Hero } from "@/components/hero"
 import { HowItWorks } from "@/components/how-it-works"
 import { Problem } from "@/components/problem"
 import { SiteHeader } from "@/components/site-header"
+import { Faq } from "@/components/faq"
 
 export default function Page() {
   return (
@@ -11,6 +12,7 @@ export default function Page() {
       <Hero />
       <Problem />
       <HowItWorks />
+      <Faq />
       <Cta />
     </main>
   )

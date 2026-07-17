@@ -30,30 +30,36 @@ export function Cta() {
       className="relative overflow-hidden scroll-mt-24 bg-background py-20 md:py-28"
     >
       <div aria-hidden="true" className="pointer-events-none absolute inset-0 -z-10">
-        <div className="absolute left-1/2 top-1/2 h-[420px] w-[700px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary/10 blur-[110px]" />
+        <div className="absolute left-1/2 top-1/2 h-[460px] w-[780px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary/10 blur-[110px]" />
       </div>
 
-      <div className="mx-auto w-[92%] max-w-3xl">
+      <div className="mx-auto w-[92%] max-w-4xl">
         <motion.div
           variants={container}
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, margin: "-80px" }}
-          className="relative rounded-3xl border border-white/10 bg-surface p-8 text-center shadow-lg sm:p-12"
+          className="relative rounded-3xl border border-white/10 bg-surface p-8 text-center shadow-lg sm:p-14"
         >
           <motion.p variants={fadeUp} className="font-display text-sm font-semibold uppercase tracking-widest text-primary">
             Fase piloto
           </motion.p>
 
-          <motion.h2 variants={fadeUp} className="mt-3 font-display text-3xl font-bold tracking-tight text-balance text-primary-foreground sm:text-4xl">
-            Buscamos los primeros bares de la zona para probarlo gratis
+          <motion.h2
+            variants={fadeUp}
+            className="mt-3 font-display text-4xl font-bold tracking-tight text-balance text-primary-foreground sm:text-5xl"
+          >
+            Antes de cerrar, un paso más
           </motion.h2>
 
-          <motion.p variants={fadeUp} className="mx-auto mt-4 max-w-xl text-base leading-relaxed text-primary-foreground/60">
-            Sin coste, sin permanencia. Solo necesitamos tu feedback real mientras terminamos de construirlo.
-          </motion.p>
+          <motion.h3
+            variants={fadeUp}
+            className="mt-5 font-display text-lg font-semibold text-primary-foreground/85 sm:text-xl"
+          >
+            Cuéntanos cómo pedís ahora y te avisamos en cuanto esté listo para ti
+          </motion.h3>
 
-          <motion.form variants={fadeUp} onSubmit={handleSubmit} className="mx-auto mt-8 flex max-w-md flex-col gap-3">
+          <motion.form variants={fadeUp} onSubmit={handleSubmit} className="mx-auto mt-7 flex max-w-md flex-col gap-3">
             <input
               type="text"
               required
@@ -69,6 +75,10 @@ export function Cta() {
               {sent ? "¡Recibido, gracias!" : "Quiero probarlo gratis"}
               {!sent && <Send className="ml-1 size-4 transition-transform group-hover:translate-x-1" aria-hidden="true" />}
             </Button>
+
+            <p className="mt-1 text-xs text-primary-foreground/45">
+              Sin coste, sin permanencia — solo tu feedback real.
+            </p>
           </motion.form>
         </motion.div>
       </div>

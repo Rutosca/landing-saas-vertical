@@ -1,7 +1,7 @@
 "use client"
 
 import { motion, type Variants } from "motion/react"
-import { ArrowRight, Check, Clock, Sparkles, Truck } from "lucide-react"
+import { ArrowRight, Check, Clock, Sparkles } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { OrderPreview } from "@/components/order-preview"
 
@@ -113,10 +113,7 @@ export function Hero() {
               <Clock className="size-4 text-primary" aria-hidden="true" />
               Listo en 5 minutos
             </span>
-            <span className="inline-flex items-center gap-2">
-              <Truck className="size-4 text-primary" aria-hidden="true" />
-              +500 proveedores conectados
-            </span>
+
           </motion.div>
         </motion.div>
 

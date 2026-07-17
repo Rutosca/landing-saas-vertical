@@ -39,8 +39,8 @@ const cards = [
 
 export function Problem() {
   return (
-    <section className="relative overflow-hidden bg-foreground py-20 md:py-28">
-      {/* Subtle warm glow that mirrors the hero — same accent colour, darker canvas */}
+    <section className="relative overflow-hidden bg-surface py-20 md:py-28">
+      {/* Warm glow — same accent, darker canvas */}
       <div aria-hidden="true" className="pointer-events-none absolute inset-0 -z-10">
         <div className="absolute left-1/2 top-0 h-[420px] w-[700px] -translate-x-1/2 rounded-full bg-primary/10 blur-[110px]" />
       </div>
@@ -57,7 +57,7 @@ export function Problem() {
             <p className="font-display text-sm font-semibold uppercase tracking-widest text-primary">
               El día a día
             </p>
-            <h2 className="mt-3 font-display text-3xl font-bold tracking-tight text-balance text-background sm:text-4xl lg:text-5xl">
+            <h2 className="mt-3 font-display text-3xl font-bold tracking-tight text-balance text-primary-foreground sm:text-4xl lg:text-5xl">
               ¿Te suena esto?
             </h2>
           </motion.div>
@@ -68,17 +68,17 @@ export function Problem() {
               <motion.div
                 key={title}
                 variants={fadeUp}
-                className="group relative rounded-2xl border border-white/10 bg-white/5 p-7 backdrop-blur-sm transition-colors hover:bg-white/8"
+                className="group relative rounded-2xl border border-white/10 bg-white/5 p-7 backdrop-blur-sm transition-colors hover:bg-white/[0.08]"
               >
                 {/* Icon container */}
                 <div className="mb-5 inline-flex size-11 items-center justify-center rounded-xl bg-primary/15 text-primary ring-1 ring-primary/20">
                   <Icon className="size-5" strokeWidth={1.75} aria-hidden="true" />
                 </div>
 
-                <h3 className="font-display text-base font-semibold leading-snug text-background">
+                <h3 className="font-display text-base font-semibold leading-snug text-primary-foreground">
                   {title}
                 </h3>
-                <p className="mt-2.5 text-sm leading-relaxed text-background/60">
+                <p className="mt-2.5 text-sm leading-relaxed text-primary-foreground/55">
                   {body}
                 </p>
 

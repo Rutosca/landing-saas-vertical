@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import { motion, AnimatePresence, type Variants } from "motion/react"
-import { Plus } from "lucide-react"
+import { CircleCheck, Plus } from "lucide-react"
 
 const container: Variants = {
   hidden: {},
@@ -46,7 +46,11 @@ export function Faq() {
                   type="button"
                   onClick={() => setOpenIndex(isOpen ? null : index)}
                   aria-expanded={isOpen}
-                  className="flex w-full items-center justify-between gap-4 rounded-2xl border border-white/10 bg-white/5 px-5 py-4 text-left transition-colors hover:border-primary/40 hover:bg-white/[0.08]"
+                  className={`flex w-full items-center justify-between gap-4 rounded-2xl border-2 px-5 py-4 text-left transition-all duration-200 ${
+                    isOpen
+                      ? "border-primary/50 bg-primary/[0.08]"
+                      : "border-white/10 bg-white/5 hover:border-primary/60 hover:bg-white/[0.1]"
+                  }`}
                 >
                   <span className="font-display text-base font-semibold text-primary-foreground">{item.question}</span>
                   <Plus className={`size-5 shrink-0 text-primary transition-transform duration-300 ${isOpen ? "rotate-45" : ""}`} aria-hidden="true" />
@@ -61,9 +65,15 @@ export function Faq() {
                       transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
                       className="overflow-hidden"
                     >
-                      <p className="-mt-2 rounded-b-2xl border border-t-0 border-white/10 bg-white/[0.03] px-5 py-4 text-sm leading-relaxed text-primary-foreground/65">
-                        {item.answer}
-                      </p>
+                      <motion.div
+                        initial={{ y: -8, opacity: 0 }}
+                        animate={{ y: 0, opacity: 1 }}
+                        transition={{ duration: 0.3, delay: 0.08, ease: [0.22, 1, 0.36, 1] }}
+                        className="-mt-2 flex items-start gap-2.5 rounded-b-2xl border-2 border-t-0 border-primary/20 bg-primary/[0.06] px-5 py-4"
+                      >
+                        <CircleCheck className="mt-0.5 size-4 shrink-0 text-primary" aria-hidden="true" />
+                        <p className="text-sm leading-relaxed text-primary-foreground/75">{item.answer}</p>
+                      </motion.div>
                     </motion.div>
                   )}
                 </AnimatePresence>

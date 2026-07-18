@@ -100,6 +100,7 @@ export function Hero() {
             >
               Ver cómo funciona
             </Button>
+            
           </motion.div>
 
           <motion.div

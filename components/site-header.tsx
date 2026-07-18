@@ -5,10 +5,8 @@ import { Boxes } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 const navLinks = [
-  { label: "Producto", href: "#" },
-  { label: "Proveedores", href: "#" },
-  { label: "Precios", href: "#" },
-  { label: "Recursos", href: "#" },
+  { label: "Cómo funciona", href: "#como-funciona" },
+  { label: "Preguntas", href: "#preguntas" },
 ]
 
 export function SiteHeader() {

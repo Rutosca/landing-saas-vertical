@@ -4,6 +4,7 @@ import { HowItWorks } from "@/components/how-it-works"
 import { Problem } from "@/components/problem"
 import { SiteHeader } from "@/components/site-header"
 import { Faq } from "@/components/faq"
+import { SiteFooter } from "@/components/site-footer"
 
 export default function Page() {
   return (
@@ -14,6 +15,7 @@ export default function Page() {
       <HowItWorks />
       <Faq />
       <Cta />
+      <SiteFooter />
     </main>
   )
 }

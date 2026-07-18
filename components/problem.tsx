@@ -68,25 +68,70 @@ export function Problem() {
               <motion.div
                 key={title}
                 variants={fadeUp}
-                className="group relative rounded-2xl border border-white/10 bg-white/5 p-7 backdrop-blur-sm transition-colors hover:bg-white/[0.08]"
+                className="group relative rounded-2xl border border-white/10 bg-white/5 p-7 backdrop-blur-sm transition-all duration-300 hover:border-white/20 hover:bg-white/[0.08] hover:shadow-[0_5px_10px_rgba(0,0,0,0.04),0_15px_25px_rgba(0,0,0,0.3)]"
               >
-                {/* Icon container */}
-                <div className="mb-5 inline-flex size-11 items-center justify-center rounded-xl bg-primary/15 text-primary ring-1 ring-primary/20">
-                  <Icon className="size-5" strokeWidth={1.75} aria-hidden="true" />
+                {/* Shine effect */}
+                <div className="absolute inset-0 z-0 overflow-hidden rounded-2xl opacity-0 transition-opacity duration-500 group-hover:opacity-100">
+                  <div 
+                    className="absolute bottom-[55%] left-1/2 w-[150%] -translate-x-1/2 rounded-full pb-[150%] blur-[35px]"
+                    style={{
+                      opacity: 0.15,
+                      backgroundImage: 'conic-gradient(from 205deg at 50% 50%, transparent 0deg, var(--primary) 25deg, transparent 295deg, transparent 360deg)'
+                    }}
+                  />
                 </div>
 
-                <h3 className="font-display text-base font-semibold leading-snug text-primary-foreground">
+                {/* Background tiles & lines */}
+                <div 
+                  className="absolute inset-0 z-0 overflow-hidden rounded-2xl"
+                  style={{
+                    maskImage: 'radial-gradient(circle at 60% 5%, black 0%, black 15%, transparent 60%)',
+                    WebkitMaskImage: 'radial-gradient(circle at 60% 5%, black 0%, black 15%, transparent 60%)'
+                  }}
+                >
+                  {/* Tiles */}
+                  <div className="opacity-0 transition-opacity delay-300 duration-300 group-hover:opacity-100">
+                    <div className="absolute left-0 top-0 h-[10%] w-[22.5%] animate-tile bg-primary/5 opacity-0" />
+                    <div className="absolute left-[22.5%] top-0 h-[10%] w-[27.5%] animate-tile bg-primary/5 opacity-0" style={{ animationDelay: '-6s' }} />
+                    <div className="absolute left-[50%] top-0 h-[10%] w-[27.5%] animate-tile bg-primary/5 opacity-0" style={{ animationDelay: '-4s' }} />
+                    <div className="absolute left-[77.5%] top-0 h-[10%] w-[22.5%] animate-tile bg-primary/5 opacity-0" style={{ animationDelay: '-2s' }} />
+                    
+                    <div className="absolute left-0 top-[10%] h-[22.5%] w-[22.5%] animate-tile bg-primary/5 opacity-0" style={{ animationDelay: '-4s' }} />
+                    <div className="absolute left-[22.5%] top-[10%] h-[22.5%] w-[27.5%] animate-tile bg-primary/5 opacity-0" style={{ animationDelay: '-2s' }} />
+                    <div className="absolute left-[50%] top-[10%] h-[22.5%] w-[27.5%] animate-tile bg-primary/5 opacity-0" />
+                    <div className="absolute left-[77.5%] top-[10%] h-[22.5%] w-[22.5%] animate-tile bg-primary/5 opacity-0" style={{ animationDelay: '-4s' }} />
+                    
+                    <div className="absolute left-[50%] top-[32.5%] h-[22.5%] w-[27.5%] animate-tile bg-primary/5 opacity-0" style={{ animationDelay: '-6s' }} />
+                    <div className="absolute left-[77.5%] top-[32.5%] h-[22.5%] w-[22.5%] animate-tile bg-primary/5 opacity-0" style={{ animationDelay: '-2s' }} />
+                  </div>
+
+                  {/* Lines */}
+                  <div className="absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                    {/* Line 1 */}
+                    <div className="absolute left-0 right-0 top-[10%] h-px origin-left scale-x-0 bg-white/10 transition-transform duration-300 group-hover:delay-0 group-hover:scale-x-100" />
+                    <div className="absolute bottom-0 left-[22.5%] top-0 w-px origin-top scale-y-0 bg-white/10 transition-transform duration-300 group-hover:delay-0 group-hover:scale-y-100" />
+                    
+                    {/* Line 2 */}
+                    <div className="absolute left-0 right-0 top-[32.5%] h-px origin-left scale-x-0 bg-white/10 transition-transform delay-150 duration-300 group-hover:delay-150 group-hover:scale-x-100" />
+                    <div className="absolute bottom-0 left-[50%] top-0 w-px origin-top scale-y-0 bg-white/10 transition-transform delay-150 duration-300 group-hover:delay-150 group-hover:scale-y-100" />
+                    
+                    {/* Line 3 */}
+                    <div className="absolute left-0 right-0 top-[55%] h-px origin-left scale-x-0 bg-white/10 transition-transform delay-300 duration-300 group-hover:delay-300 group-hover:scale-x-100" />
+                    <div className="absolute bottom-0 right-[22.5%] top-0 w-px origin-top scale-y-0 bg-white/10 transition-transform delay-300 duration-300 group-hover:delay-300 group-hover:scale-y-100" />
+                  </div>
+                </div>
+
+                {/* Icon container */}
+                <div className="relative z-10 mb-5 inline-flex size-11 items-center justify-center rounded-xl bg-primary/15 text-primary ring-1 ring-primary/20 backdrop-blur-md transition-all duration-300 group-hover:bg-primary/20 group-hover:text-primary group-hover:ring-primary/40">
+                  <Icon className="relative z-10 size-5 transition-colors duration-300" strokeWidth={1.75} aria-hidden="true" />
+                </div>
+
+                <h3 className="relative z-10 font-display text-base font-semibold leading-snug text-primary-foreground">
                   {title}
                 </h3>
-                <p className="mt-2.5 text-sm leading-relaxed text-primary-foreground/55">
+                <p className="relative z-10 mt-2.5 text-sm leading-relaxed text-primary-foreground/55">
                   {body}
                 </p>
-
-                {/* Bottom accent line */}
-                <div
-                  aria-hidden="true"
-                  className="absolute bottom-0 left-7 right-7 h-px rounded-full bg-primary/20 opacity-0 transition-opacity group-hover:opacity-100"
-                />
               </motion.div>
             ))}
           </div>

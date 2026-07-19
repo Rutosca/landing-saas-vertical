@@ -40,16 +40,14 @@ export function SiteHeader() {
         </nav>
 
         <div className="flex items-center gap-2">
-          <Button className="rounded-full font-semibold shadow-sm" render={<a href="#prueba-gratis" />}>
-            Pruébalo gratis
-          </Button>
+          
           <Button
             variant="ghost"
             className="hidden text-sm font-medium text-foreground hover:bg-secondary sm:inline-flex"
           >
             Iniciar sesión
           </Button>
-          <Button className="rounded-full font-semibold shadow-sm">
+          <Button className="rounded-full font-semibold shadow-sm" render={<a href="#prueba-gratis" />}>
             Pruébalo gratis
           </Button>
         </div>

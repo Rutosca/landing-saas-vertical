@@ -85,6 +85,7 @@ export function Hero() {
             <Button
               size="lg"
               className="group h-12 rounded-full px-7 text-base font-semibold shadow-md"
+              render={<a href="#prueba-gratis" />}
             >
               Pruébalo gratis
               <ArrowRight

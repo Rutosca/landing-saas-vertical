@@ -34,7 +34,7 @@ export function SiteFooter() {
       <div className="mx-auto mt-8 w-[92%] max-w-6xl border-t border-white/5 pt-6 text-center">
         <p className="text-xs text-primary-foreground/40">
           © 2026 Abastio — Proyecto en fase piloto. ¿Dudas?{" "}
-          <a href="mailto:TU-CORREO@ejemplo.com" className="underline decoration-primary-foreground/20 underline-offset-2 hover:text-primary-foreground/70">
+          <a href="mailto:rutosca06@gmail.com" className="underline decoration-primary-foreground/20 underline-offset-2 hover:text-primary-foreground/70">
             Escríbeme
           </a>
         </p>
